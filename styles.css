@@ -302,41 +302,14 @@ p {
   background: linear-gradient(135deg, rgba(0, 113, 227, 0.14), rgba(52, 168, 83, 0.1));
 }
 
-.line-icon::after {
-  content: "";
-  width: 22px;
-  height: 22px;
-  border: 2px solid currentColor;
-  border-radius: 7px;
-}
-
-.line-icon.globe::after {
-  border-radius: 50%;
-  box-shadow: inset 7px 0 0 -5px currentColor, inset -7px 0 0 -5px currentColor;
-}
-
-.line-icon.file::after {
-  border-radius: 4px;
-  clip-path: polygon(0 0, 72% 0, 100% 28%, 100% 100%, 0 100%);
-}
-
-.line-icon.pencil::after {
-  width: 21px;
-  height: 8px;
-  border-radius: 999px;
-  transform: rotate(-35deg);
-}
-
-.line-icon.mail::after {
-  width: 24px;
-  height: 16px;
-  border-radius: 4px;
-}
-
-.line-icon.chat::after {
-  width: 24px;
-  height: 18px;
-  border-radius: 8px;
+.line-icon svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .soft-section {
