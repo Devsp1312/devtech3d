@@ -164,7 +164,9 @@
             <p><strong>Discord</strong><br>psycrypta</p>
           </div>
         </div>
-        <form class="contact-form" action="mailto:Devpatel0276@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form" id="quote-form" action="https://formsubmit.co/ajax/Devpatel0276@gmail.com" method="post">
+          <input type="hidden" name="_subject" value="New devtech3d quote request">
+          <input type="hidden" name="_template" value="table">
           <label>
             Your Name
             <input type="text" name="name" autocomplete="name" required>
@@ -178,6 +180,7 @@
             <textarea name="project" rows="7" placeholder="Tell me what you need printed or modeled, approximate size, material/color preference, quantity, and shipping country." required></textarea>
           </label>
           <button class="button full" type="submit">Send Quote Request</button>
+          <p class="form-status full" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -186,5 +189,6 @@
   <footer class="footer">
     <p>devtech3d</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
