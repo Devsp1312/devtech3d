@@ -277,7 +277,7 @@ p {
   padding: 34px;
 }
 
-.line-icon,
+.site-icon,
 .step-number {
   position: relative;
   display: inline-flex;
@@ -292,7 +292,7 @@ p {
   box-shadow: inset 0 0 0 1px #d7eaff;
 }
 
-.line-icon::before,
+.site-icon::before,
 .step-number::before {
   content: "";
   position: absolute;
@@ -302,7 +302,7 @@ p {
   background: linear-gradient(135deg, rgba(0, 113, 227, 0.14), rgba(52, 168, 83, 0.1));
 }
 
-.line-icon svg {
+.site-icon svg {
   width: 25px;
   height: 25px;
   fill: none;
@@ -434,7 +434,7 @@ details p {
   padding: 28px;
 }
 
-.contact-methods .line-icon {
+.contact-methods .site-icon {
   margin: 0 0 18px;
 }
 
