@@ -7,6 +7,7 @@ body {
   background: white;
   line-height: 1.6;
   overflow-wrap: break-word;
+  overflow-x: hidden;
 }
 
 header {
@@ -45,12 +46,108 @@ h2 {
   color: #0b72d9;
 }
 
+.print-heading {
+  position: relative;
+  display: inline-block;
+  color: #0b72d9;
+  white-space: nowrap;
+}
+
+.js .print-heading {
+  color: #b7d8f5;
+}
+
+.js .print-heading.is-printed {
+  color: #0b72d9;
+}
+
+.print-heading::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  width: 0;
+  overflow: hidden;
+  color: #0b72d9;
+  white-space: nowrap;
+}
+
+.print-heading::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 0;
+  width: 16px;
+  height: 12px;
+  border: 2px solid #111;
+  border-bottom: 5px solid #111;
+  background: white;
+  opacity: 0;
+}
+
+.print-heading::before,
+.print-heading::after {
+  display: none;
+}
+
+.js .print-heading::before,
+.js .print-heading::after {
+  display: block;
+}
+
+.js .print-heading.is-printed::before,
+.js .print-heading.is-printed::after {
+  display: none;
+}
+
+.print-heading.is-printing::before {
+  animation: printText 1.4s steps(28, end) forwards;
+}
+
+.print-heading.is-printing::after {
+  opacity: 1;
+  animation: moveNozzle 1.4s linear forwards;
+}
+
+@keyframes printText {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes moveNozzle {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    left: calc(100% - 4px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .print-heading {
+    color: #0b72d9;
+  }
+
+  .print-heading::before,
+  .print-heading::after {
+    display: none;
+  }
+}
+
 h3 {
   margin-bottom: 4px;
 }
 
 a {
   color: #0b72d9;
+  overflow-wrap: anywhere;
 }
 
 .hero {
@@ -62,6 +159,7 @@ a {
 
 .hero img {
   width: 100%;
+  max-width: 100%;
   border: 1px solid #ddd;
 }
 
@@ -127,7 +225,30 @@ footer {
     padding: 16px;
   }
 
+  nav {
+    gap: 10px;
+  }
+
+  p,
+  li {
+    max-width: 32ch;
+  }
+
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .button {
+    display: block;
+    width: fit-content;
+    margin-bottom: 10px;
+  }
+
+  .print-heading {
+    white-space: normal;
+  }
+
+  .print-heading::before {
+    white-space: normal;
   }
 }
